@@ -17,11 +17,13 @@ namespace Advent_of_Code_2022
 
     public class Day01
 	{
+        String inputFileName = "/Users/twp/Downloads/day_01.txt";
+
+        List<Elf> elves;
+
         public Day01()
         {
-            String inputFileName = "/Users/twp/Downloads/day_01.txt";
-
-            List<Elf> elves = new();
+            elves = new();
             List<int> foods = new();
 
             foreach (String line in System.IO.File.ReadLines(inputFileName))
@@ -34,7 +36,10 @@ namespace Advent_of_Code_2022
                 }
                 foods.Add(int.Parse(line));
             }
+        }
 
+        public void Results()
+        { 
             // the elf with the most calories:
             Console.WriteLine(elves.OrderByDescending(e => e.TotalCalories())
                 .First()

@@ -3,3 +3,4 @@
 using Advent_of_Code_2022;
 
 var d = new Day01();
+d.Results();
